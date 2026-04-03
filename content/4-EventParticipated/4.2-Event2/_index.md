@@ -33,6 +33,3 @@ pre: " <b> 4.2. </b> "
 
 The workshop showed me that modernization is not only about changing technologies, but also about planning, testing, and risk management. When used properly, GenAI can significantly reduce the initial analysis effort and help project teams make faster, evidence-based decisions.
 
-## Event Photos
-
-* Add your event photos here.

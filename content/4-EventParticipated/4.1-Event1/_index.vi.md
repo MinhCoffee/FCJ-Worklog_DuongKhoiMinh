@@ -37,7 +37,3 @@ pre: " <b> 4.1. </b> "
 ## Trải nghiệm cá nhân
 
 Sự kiện mang lại cho em một góc nhìn rõ ràng hơn về cách học và ứng dụng AI theo hướng thực chiến. Phần chia sẻ về prompt engineering giúp em hiểu rằng chất lượng đầu ra của mô hình phụ thuộc rất nhiều vào cách đặt ngữ cảnh và ràng buộc đầu vào. Bên cạnh đó, việc được tiếp cận các dự án thực tế giúp em có thêm động lực để phát triển những sản phẩm có giá trị ứng dụng cao.
-
-## Hình ảnh sự kiện
-
-* Thêm hình ảnh tham gia sự kiện của bạn tại đây.
