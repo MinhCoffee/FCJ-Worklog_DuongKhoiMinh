@@ -1,85 +1,38 @@
 ---
 title: "Event 2"
-date: 2025-10-16
+date: 2026-04-04
 weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
+# Bài thu hoạch sự kiện: GenAI-powered App-DB Modernization Workshop
 
-# Bài thu hoạch “DX<inAction> Talk#7: Reinventing DevSecOps with AWS Generative AI”
+## Thông tin sự kiện
 
-### Mục Đích Của Sự Kiện
+- **Tên sự kiện:** GenAI-powered App-DB Modernization Workshop
+- **Thời gian:** 09:00 ngày 04/04/2026
+- **Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+- **Vai trò:** Người tham dự
 
-- Khai thác góc nhìn chiến lược và thực tiễn về cuộc chuyển mình đầy mạnh mẽ của **AI trong DevSecOps**.
-- Giới thiệu giải pháp tích hợp AI toàn diện: Từ tự động hóa quy trình đến kiểm tra bảo mật liên tục.
-- "Mổ xẻ" các **Case study** từ CMC Global và AWS về cách áp dụng AI trong giải quyết các vấn đề bảo mật.
-- Định hướng cho các **DevSecOps Engineer** trong thị trường đòi hỏi chuyên môn cao.
+## Nội dung và hoạt động chính
 
-### Danh Sách Diễn Giả
+- Tìm hiểu tổng quan về hiện đại hóa ứng dụng và cơ sở dữ liệu (App-DB modernization) với sự hỗ trợ của GenAI.
+- Theo dõi quy trình phân tích hệ thống hiện trạng, xác định thành phần ưu tiên và lập kế hoạch migration theo từng giai đoạn.
+- Quan sát các ví dụ thực tế về việc dùng AI để hỗ trợ đánh giá mã nguồn, gợi ý cải tiến và tối ưu truy vấn.
+- Thảo luận những thách thức thường gặp khi modernize App-DB như độ tương thích hệ thống, kiểm thử hồi quy và kiểm soát rủi ro.
 
-- **Anh Lê Thanh Đức** – Cloud Delivery Manager, CMC Global
-- **Anh Dư Quốc Thành** – Technical Leader, CMC Global
-- **Khách mời đặc biệt: Anh Văn Hoàng Kha** – Cloud Engineer, AWS Community Builder
+## Kết quả và giá trị đạt được
 
-### Nội Dung Nổi Bật
+- Có cái nhìn rõ hơn về lộ trình App-DB modernization trong môi trường dự án thực tế.
+- Hiểu vai trò của GenAI trong việc tăng tốc phân tích kỹ thuật và hỗ trợ đề xuất hướng chuyển đổi.
+- Củng cố tư duy triển khai theo chu kỳ: đánh giá, thiết kế giải pháp, triển khai và kiểm thử.
+- Rèn luyện kỹ năng trao đổi kỹ thuật và phối hợp nhóm khi thảo luận các phương án migration.
 
-#### Giải pháp tích hợp AI toàn diện trong DevSecOps
+## Trải nghiệm cá nhân
 
-- Tự động hóa quy trình, dự đoán rủi ro thông minh.
-- Kiểm tra bảo mật liên tục trong quy trình CI/CD.
-- Phản ứng nhanh với các mối đe dọa tiềm ẩn.
+Workshop giúp em hiểu rằng hiện đại hóa hệ thống không chỉ là thay đổi công nghệ mà còn là bài toán về kế hoạch, kiểm thử và quản trị rủi ro. Việc ứng dụng GenAI đúng cách có thể giảm đáng kể thời gian phân tích ban đầu, đồng thời hỗ trợ đội dự án đưa ra quyết định nhanh và có cơ sở hơn.
 
-#### Case study và Bài học thực tiễn
+## Hình ảnh sự kiện
 
-- Trực tiếp "mổ xẻ" các dự án từ **CMC Global** và **AWS** để học cách các doanh nghiệp áp dụng AI trong giải quyết các vấn đề bảo mật và vận hành hệ thống.
-- Khám phá cách AI giúp gạt bỏ những “gatekeeper” cứng nhắc và quy trình phản hồi thủ công tốn kém.
-
-#### Định hướng sự nghiệp và nâng cao chuyên môn
-
-- Thảo luận về việc liên tục cập nhật xu hướng và nâng cao chuyên môn là chìa khóa then chốt để kỹ sư chinh phục các dự án phức tạp.
-
-### Những Gì Học Được
-
-#### Tích hợp AI và Tự động hóa
-
-- Hiểu rõ về **Giải pháp tích hợp AI toàn diện** trong DevSecOps, bao gồm tự động hóa quy trình và kiểm tra bảo mật liên tục trong CI/CD.
-- Nắm được cách AI có thể **dự đoán rủi ro thông minh** và tăng tốc độ phản ứng với các mối đe dọa.
-
-#### Tư duy DevSecOps hiện đại
-
-- Nhận ra tầm quan trọng của việc **tích hợp bảo mật vào SDLC** (Software Development Life Cycle).
-- Hiểu cách các công cụ phổ biến như **Jenkins** (CI/CD), **SonarQube** (SAST), **OWASP ZAP** (DAST), và **Terraform** (IaC) hoạt động.
-
-#### Công cụ Generative AI
-
-- Khám phá **Amazon Q Developer** – trợ lý AI mạnh mẽ hỗ trợ code generation, testing, vulnerability scanning, và tối ưu hóa phát triển phần mềm trên AWS.
-
-### Ứng Dụng Vào Công Việc (Từ Worklog Tuần 6)
-
-- **Áp dụng tư duy DevSecOps** vào dự án hiện tại, tích hợp bảo mật ngay từ giai đoạn đầu phát triển.
-- **Nghiên cứu Amazon Q Developer** để tích hợp vào workflow, hỗ trợ tạo code và kiểm tra lỗi bảo mật.
-- Tìm hiểu các công cụ **CI/CD** và kiểm tra bảo mật **SAST/DAST** để đưa vào lộ trình phát triển dự án.
-
-### Trải nghiệm trong event
-
-Workshop **"Reinventing DevSecOps with AWS Generative AI"** mang đến một cái nhìn đa chiều, chiến lược và thực tiễn về tương lai của bảo mật và vận hành hệ thống Cloud:
-
-#### Góc nhìn từ chuyên gia
-- Được lắng nghe những góc nhìn chiến lược từ các chuyên gia hàng đầu như Anh Lê Thanh Đức, Anh Dư Quốc Thành, và khách mời Anh Văn Hoàng Kha.
-- Qua các Case Study, tôi hiểu cách các doanh nghiệp lớn áp dụng **Generative AI** để giải quyết các vấn đề bảo mật và vận hành phức tạp.
-
-#### Giá trị của AI trong DevSecOps
-- Nhận thấy rõ khả năng của AI trong việc **loại bỏ các rào cản thủ công** (như gatekeeper cứng nhắc, ca trực 24/7), chuyển DevSecOps thành một quy trình tự động hóa và thông minh hơn.
-- Sự kiện đã cung cấp giải pháp cụ thể cho việc **tích hợp AI toàn diện**, từ tự động hóa quy trình đến dự đoán rủi ro.
-
-#### Định hướng chuyên môn
-- Nhấn mạnh tầm quan trọng của việc **liên tục cập nhật xu hướng** và nâng cao chuyên môn để kỹ sư DevSecOps có thể chinh phục các dự án phức tạp trong tương lai.
-- Có cơ hội hỏi đáp trực tiếp cùng các diễn giả để giải đáp các thắc mắc về tích hợp AI vào dự án của mình.
-
-#### Kết luận
-Sự kiện là một nguồn thông tin quý giá, giúp tôi không chỉ hiểu về công nghệ mà còn về định hướng nghề nghiệp, đặc biệt là cách sử dụng các công cụ mạnh mẽ như Amazon Q Developer để **tăng cường năng suất** và **tích hợp bảo mật** vào quy trình phát triển.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện đã thành công trong việc khai thác góc nhìn chiến lược và thực tiễn về DevSecOps với Generative AI, truyền cảm hứng và cung cấp định hướng rõ ràng cho các kỹ sư trẻ.
+* Thêm hình ảnh tham gia sự kiện của bạn tại đây.
