@@ -1,39 +1,28 @@
 ---
-title: "Worklog Week 9"
-date: 2025-11-04
+title: "Week 9 Worklog"
+date: 2026-03-09
 weight: 9
 chapter: false
-pre: " <b> 1.9. </b> "
+pre: "<b>1.9. </b>"
 ---
 
+### Week 9 Objectives
 
+- Stabilize frontend-backend integration after deployment.
+- Prepare the optimization backlog.
 
-### Week 9 Objectives: 
+### Tasks to be carried out this week
 
-* Complete the transition to the **AWS SAM (Serverless Application Model)** development model.
-* **Refactor** and re-implement the basic CRUD functionalities according to the SAM structure.
-* Resolve environment-related issues to achieve a **successful Deployment** status on AWS.
-* Integrate **Docker** to standardize the environment for `sam build`.
+| Day | Task | Start Date | Completion Date | Reference Material |
+|-----|------|------------|-----------------|---------------------|
+| 1 | - Fix integration issues (CORS, env configs, API base URL).<br>- Validate production endpoints. | 09/03/2026 | 10/03/2026 | Internal notes |
+| 2 | - Standardize API error responses.<br>- Improve server-side logging. | 11/03/2026 | 11/03/2026 | Internal notes |
+| 3 | - Tune CDN cache rules.<br>- Add basic monitoring and alerts. | 12/03/2026 | 12/03/2026 | Internal notes |
+| 4 | - Review backlog and prioritize optimization items.<br>- Confirm priorities with the team. | 13/03/2026 | 13/03/2026 | Internal notes |
 
----
+### Week 9 Achievements
 
-### Tasks to be Deployed This Week:
-
-| Day | Task | Start Date | Completion Date | Resources |
-| :--- | :--- | :--- | :--- | :--- |
-| Monday | - **In-depth research on AWS SAM:** Understand the `template.yaml` structure and how Serverless resources (Lambda, API Gateway) operate within the SAM model. <br> - Plan the detailed migration of existing source code to the SAM structure. | 04/11/2025 | 04/11/2025 | AWS SAM Documentation, AWS Study Group |
-| Tuesday | - **Source Code Refactoring:** Start rewriting basic CRUD functionalities (create/update posts) using the SAM pattern (Handlers and Event Triggers). <br> - **Docker Integration:** Install and configure Docker to ensure the correct Python version for the `sam build` process. | 05/11/2025 | 06/11/2025 | Docker Documentation, SAM CLI |
-| Wednesday | - **Local Debugging and Testing:** Execute `sam local invoke` and `sam local start-api`. <br> - **Encountered critical issues** in the Local environment (Dependency errors, environment conflicts, DynamoDB local connection issues). | 06/11/2025 | 07/11/2025 | SAM CLI Error Reports, Stack Overflow |
-| Thursday | - **Strategic Decision:** The Backend Team decided to switch to a **deploy-then-test** strategy on the actual AWS environment to overcome local debugging barriers, accepting the high risk. <br> - Focus on fixing configuration errors in `template.yaml` in preparation for `sam deploy`. | 07/11/2025 | 08/11/2025 | |
-| Friday | - **Successful Deployment:** Executed `sam deploy --guided` and finally deployed the project to the AWS environment. <br> - **Basic Verification:** Tested the created and functioning API Endpoints, confirming CRUD functionality is online. | 08/11/2025 | 08/11/2025 | AWS CloudFormation Deployment Logs |
-
----
-
-### Week 9 Achievements: 
-
-* **Completed the technology transition** to the **AWS SAM** development model for the entire project.
-* **Successfully refactored** the basic CRUD functionalities into the SAM Serverless structure.
-* Resolved environment issues by using **Docker** to ensure the `sam build` process uses the required Python version correctly.
-* **Achieved a critical milestone:** Successfully deployed the project to the AWS environment, overcoming local debugging hurdles.
-* The **Travel-Guided project** now has a working API version on a real Cloud environment (though deeper testing is still required).
-* ...
+- Resolved key integration issues between frontend and backend.
+- API responses and logging standardized.
+- CDN cache rules tuned with basic monitoring in place.
+- Optimization backlog prioritized and confirmed.

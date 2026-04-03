@@ -1,37 +1,27 @@
 ---
 title: "Worklog Tuần 7"
-date: 2025-10-21
+date: 2026-02-23
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
+### Mục tiêu tuần 7
 
-### Mục tiêu tuần 7: 
+- Nghiên cứu cách triển khai AI cho dự án.
 
-* Tập trung **ôn tập, củng cố kiến thức** chuẩn bị cho kỳ thi giữa kì.
-* Luyện tập các bài lab, câu hỏi trắc nghiệm trên các trang **AWS Builders** và **AWSboy** để làm quen với format đề thi.
-* Hệ thống hóa lại các dịch vụ **AWS cơ bản** đã học: EC2, S3, VPC, IAM, RDS...
+### Các công việc cần triển khai trong tuần này
 
----
+| STT | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|-----|-----------|--------------|-----------------|----------------|
+| 1 | - Xác định use case AI và tiêu chí thành công.<br>- Làm rõ phạm vi và đầu ra kỳ vọng. | 23/02/2026 | 23/02/2026 | Tài liệu nội bộ |
+| 2 | - Rà soát mức độ sẵn sàng dữ liệu và yêu cầu bảo mật/riêng tư.<br>- Ghi nhận gap và rủi ro. | 24/02/2026 | 24/02/2026 | Tài liệu nội bộ |
+| 3 | - So sánh phương án AI (dịch vụ AWS vs tự triển khai).<br>- Ước tính chi phí và công sức vận hành. | 25/02/2026 | 26/02/2026 | Tài liệu AWS |
+| 4 | - Lập kế hoạch tích hợp AI và phạm vi PoC.<br>- Đưa vào yêu cầu phân quyền truy cập. | 27/02/2026 | 27/02/2026 | Tài liệu nội bộ |
 
-### Các công việc cần triển khai trong tuần này:
+### Kết quả đạt được tuần 7
 
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| :--- | :--- | :--- | :--- | :--- |
-| 2 | - Hệ thống hóa lại kiến thức **dịch vụ Compute** (EC2, Lambda). <br> - **Thực hành:** Làm bài tập/lab về tạo, cấu hình, quản lý vòng đời của **EC2 Instance**. | 22/10/2025 | 22/10/2025 | AWS Builders, AWSboy |
-| 3 | - Ôn tập kiến thức **dịch vụ Storage** (S3, EBS, EFS). <br> - **Thực hành:** Làm bài tập về các lớp lưu trữ của S3 (Standard, IA, Glacier), các tùy chọn của EBS. | 23/10/2025 | 23/10/2025 | AWS Builders, AWSboy |
-| 4 | - Củng cố kiến thức về **Networking** (VPC, Subnets, Route Tables, Internet Gateway, Security Group). <br> - **Thực hành:** Luyện tập các câu hỏi về cấu hình VPC cơ bản, quy tắc của Security Group và NACL. | 24/10/2025 | 24/10/2025 | AWS Builders, AWSboy |
-| 5 | - Ôn tập **Database** (RDS, DynamoDB) và **Security/Identity** (IAM). <br> - **Thực hành:** Tập trung vào các chính sách **IAM Policy** và **IAM Role** cơ bản. | 25/10/2025 | 25/10/2025 | AWS Builders, AWSboy |
-| 6 | - **Tổng kết và Luyện đề:** Làm các **bài thi thử/đề tổng hợp** trên AWS Builders và AWSboy. <br> - **Rà soát** lại các kiến thức còn yếu và cần bổ sung. | 26/10/2025 | 26/10/2025 | AWS Builders, AWSboy |
-
----
-
-### Kết quả đạt được tuần 7: 
-
-* Đã hoàn thành việc **ôn tập toàn diện** các nhóm dịch vụ AWS cơ bản: Compute, Storage, Networking, Database, Security (IAM).
-* **Luyện tập thành công** hàng loạt bài lab và câu hỏi trắc nghiệm trên hai nền tảng miễn phí **AWS Builders** và **AWSboy**.
-* **Nắm vững** các thông số cơ bản của **EC2 (Instance Type, AMI, EBS)** và cách thức hoạt động của **S3 (Storage Classes, Object/Bucket)**.
-* **Hiểu rõ** mối quan hệ và cấu hình của các thành phần trong **VPC** (Public/Private Subnets, Routing).
-* **Tự tin hơn** với các kiến thức đã học, sẵn sàng cho kỳ thi giữa kì sắp tới.
-* ...
+- Định nghĩa rõ use case AI và metric thành công.
+- Tài liệu hóa mức độ sẵn sàng dữ liệu và ràng buộc riêng tư.
+- Chốt shortlist phương án AI kèm trade-off và chi phí.
+- Hoàn thành kế hoạch tích hợp và phạm vi PoC.

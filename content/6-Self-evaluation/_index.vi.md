@@ -1,90 +1,57 @@
 ---
 title: "Tự đánh giá"
-date: 2025-01-01
+date: 2026-04-03
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-## Đánh giá Quá trình Thực tập
+## Tổng quan quá trình thực tập
 
-Trong 12 tuần thực tập tại **Amazon Web Services Vietnam Co., Ltd.** (06/09/2025 - 24/12/2025), tôi đã trải qua một hành trình chuyển đổi từ việc làm quen với Cloud Computing cơ bản đến xây dựng thành công một ứng dụng Serverless production-ready trên AWS.
+Trong 12 tuần (05/01/2026 - 03/04/2026) tại chương trình FCJ, tôi tham gia phát triển hệ thống quản lý order và báo cáo line sản xuất, triển khai trên AWS.
 
-### Tổng quan Dự án
+### Phạm vi công việc chính
 
-Tôi đã tham gia phát triển **Travel Guide Application** - một nền tảng chia sẻ hành trình du lịch với kiến trúc Serverless hoàn chỉnh, bao gồm:
+- Khởi tạo backend, cấu hình môi trường, logging và auth (login/logout).
+- Xây dựng RBAC cho các role (admin, lineLeader, staff).
+- Phát triển luồng quản lý order cho admin và báo cáo line cho lineLeader.
+- Tối ưu đăng nhập, chuẩn hóa Enum role, cải thiện hiệu năng DB.
+- Deploy FE lên S3/CloudFront, cấu hình cache và kiểm tra sau deploy.
+- UAT, sửa lỗi và cập nhật tài liệu dự án.
+- Nghiên cứu phương án tích hợp AI và đề xuất phạm vi PoC.
 
-**Thành tựu Kỹ thuật:**
-- Triển khai CloudFormation/SAM cho 6+ microservices
-- Xây dựng **Backend API** với 15+ Lambda functions, API Gateway, và Cognito Authentication
-- Thiết kế **6 DynamoDB tables** tối ưu với GSI cho query patterns phức tạp
-- Tích hợp **AI Image Processing** với Rekognition, SQS pipeline, và SNS/SES notifications
-- Implement **Infrastructure as Code** với deployment automation scripts
-- Cấu hình **IAM roles & policies** theo nguyên tắc least privilege
+### Kết quả nổi bật
 
-**Kỹ năng Phát triển:**
-- Hiểu biết **Python** cho Lambda functions và **React** cho Frontend
-- Thành thạo **AWS SAM**, Docker, và CI/CD workflows
-- Giải quyết các vấn đề phức tạp: CORS, cross-stack references, async processing
-- Debug và optimize performance trong môi trường production
+- Hoàn thiện luồng order và báo cáo tiến độ theo vai trò.
+- Cải thiện hiệu năng hệ thống bằng index và tối ưu query.
+- Ổn định triển khai FE với CDN và cấu hình HTTPS.
+- Hoàn tất UAT và chỉnh sửa theo phản hồi thực tế.
 
-**Soft Skills:**
-- Làm việc nhóm hiệu quả trong môi trường Agile
-- Tự học và áp dụng nhanh công nghệ mới (từ không biết đến deploy production trong 12 tuần)
-- Viết documentation chi tiết cho team và end-users
+### Tự đánh giá theo tiêu chí
 
-### Phương pháp Đánh giá
+| STT | Tiêu chí | Mô tả ngắn | Xuất sắc | Tốt | Cần cải thiện |
+|-----|----------|------------|----------|-----|---------------|
+| 1 | **Kiến thức kỹ thuật** | Auth/RBAC, order workflow, S3/CloudFront, DB tuning | ☐ | ✅ | ☐ |
+| 2 | **Học hỏi & thích nghi** | Nắm nhanh quy trình dự án và dịch vụ AWS liên quan | ✅ | ☐ | ☐ |
+| 3 | **Chủ động & giải quyết vấn đề** | Tự phân tích issue và đề xuất hướng xử lý | ☐ | ✅ | ☐ |
+| 4 | **Chất lượng & tiến độ** | Hoàn thành theo kế hoạch tuần, có review và cải thiện | ☐ | ✅ | ☐ |
+| 5 | **Kiểm thử & đảm bảo chất lượng** | UAT, regression test, fix theo phản hồi | ☐ | ✅ | ☐ |
+| 6 | **Giao tiếp & báo cáo** | Cập nhật worklog, trao đổi rõ ràng với team | ☐ | ✅ | ☐ |
+| 7 | **Làm việc nhóm** | Phối hợp và hỗ trợ đồng đội khi cần | ☐ | ✅ | ☐ |
+| 8 | **Tư duy sản phẩm & ước lượng** | Cần cải thiện việc estimate và ưu tiên công việc | ☐ | ☐ | ✅ |
 
-Để đánh giá khách quan quá trình thực tập, tôi sử dụng bảng tiêu chí dưới đây, phản ánh cả thành tựu đạt được và những điểm cần cải thiện:
+### Điểm mạnh
 
+- Tốc độ học hỏi tốt và áp dụng nhanh vào công việc.
+- Chủ động triển khai và tối ưu các phần việc được giao.
+- Tinh thần trách nhiệm và phối hợp nhóm ổn định.
 
-| STT | Tiêu chí | Mô tả chi tiết & Bằng chứng | Xuất sắc | Tốt | Cần cải thiện |
-|-----|----------|----------------------------|----------|-----|---------------|
-| 1 | **Kiến thức Chuyên môn & Kỹ thuật** | Thành thạo AWS services (Lambda, DynamoDB, S3, Cognito, Rekognition), Infrastructure as Code (SAM/CloudFormation), Python/React. Deploy thành công production app với 15+ Lambda functions, 6 DynamoDB tables, AI processing pipeline. | ☐ | ✅ | ☐ |
-| 2 | **Tốc độ Học hỏi & Thích nghi** | Từ không biết AWS đến deploy production app trong 12 tuần. Tự học SAM, Docker, multi-stack architecture. Giải quyết được các vấn đề phức tạp (CORS, cross-stack refs) mà không có kinh nghiệm trước đó. | ✅ | ☐ | ☐ |
-| 3 | **Tính Chủ động & Sáng tạo** | Tự nghiên cứu và đề xuất multi-stack pattern để optimize deployment. Proactive debug và fix issues (CORS, IAM permissions). Tự viết deployment automation scripts. | ✅ | ☐ | ☐ |
-| 4 | **Trách nhiệm & Cam kết** | Hoàn thành đúng timeline 12 tuần với deliverables rõ ràng mỗi tuần. Code quality cao với proper error handling, logging. Documentation đầy đủ cho team. | ✅ | ☐ | ☐ |
-| 5 | **Kỷ luật & Quy trình** | Tuân thủ best practices (least privilege IAM, proper git workflow). Follow coding standards và security guidelines. Consistent daily progress tracking. | ✅ | ☐ | ☐ |
-| 6 | **Tiếp nhận Phản hồi** | Áp dụng feedback để cải thiện architecture (chuyển từ monolithic sang multi-stack). Học từ code review và refactor accordingly. Còn cần cải thiện việc chủ động xin feedback sớm hơn. | ☐ | ✅ | ☐ |
-| 7 | **Kỹ năng Giao tiếp** | Viết documentation chi tiết (worklog, technical docs). Present ideas rõ ràng trong team meetings. Cần cải thiện việc giải thích technical concepts cho non-technical audience. | ☐ | ✅ | ☐ |
-| 8 | **Làm việc Nhóm** | Collaborate hiệu quả với team members. Share knowledge và support đồng nghiệp. Contribute vào code reviews và technical discussions. | ✅ | ☐ | ☐ |
-| 9 | **Thái độ Chuyên nghiệp** | Tôn trọng đồng nghiệp, deadline, và commitments. Maintain positive attitude khi gặp challenges. Professional communication trong mọi tình huống. | ✅ | ☐ | ☐ |
-| 10 | **Tư duy Giải quyết Vấn đề** | Successfully debug complex issues (CORS, async processing, IAM). Implement creative solutions (SQS pipeline, multi-stack). Analyze trade-offs và make informed decisions. | ✅ | ☐ | ☐ |
-| 11 | **Đóng góp Thực tế** | Deliver production-ready application với full features. Create reusable infrastructure code. Document lessons learned cho future projects. Positive feedback từ team về code quality. | ✅ | ☐ | ☐ |
-| 12 | **Tổng thể** | Vượt expectations cho intern position. Từ beginner đến có thể independently deploy và maintain production AWS infrastructure. Ready cho junior developer role. | ✅ | ☐ | ☐ |
+### Điểm cần cải thiện
 
-### Điểm Mạnh Đã Chứng minh
+- Cải thiện kỹ năng ước lượng thời gian và ưu tiên backlog.
+- Viết tài liệu giải thích cho người không chuyên rõ ràng hơn.
 
-**1. Technical Excellence**
-- Thành thạo AWS serverless stack trong thời gian ngắn
-- Code quality cao với proper architecture patterns
-- Successfully implement complex features (AI processing, multi-stack deployment)
+### Kế hoạch tiếp theo
 
-**2. Problem-Solving Ability**
-- Giải quyết được các technical challenges phức tạp (CORS, IAM, async processing)
-- Debug efficiently và find root causes nhanh
-- Propose và implement creative solutions
-
-**3. Self-Learning & Adaptability**
-- Tự học nhiều tecnhnologies mới (SAM, Docker, CloudFormation)
-- Quickly adapt to new tools và best practices
-- Proactive trong việc research và apply new knowledge
-
-**4. Delivery & Execution**
-- Consistent progress mỗi tuần với clear deliverables
-- Meet deadlines và maintain quality
-- Production-ready code với proper testing và documentation
-
-
-
-### Kết luận
-
-Quá trình thực tập 12 tuần đã là một journey đầy thử thách nhưng rewarding. Từ việc không biết gì về AWS, tôi đã successfully deploy một production application với architecture phức tạp, demonstrate được khả năng học hỏi nhanh và solve problems effectively.
-
-Những gì tôi tự hào nhất không chỉ là technical skills đã học được, mà còn là mindset và approach to learning. Tôi đã học được cách:
-- Break down complex problems thành manageable pieces
-- Research effectively và apply knowledge quickly
-- Work independently nhưng cũng collaborate well với team
-- Maintain quality standards ngay cả khi under pressure
-
-Tôi tin rằng foundation này sẽ giúp tôi continue growing as a software engineer và contribute effectively cho bất kỳ team nào trong tương lai.
+- Rèn luyện kỹ năng ước lượng và lập kế hoạch theo tuần.
+- Bổ sung kiến thức về monitoring, security và cost optimization trên AWS.

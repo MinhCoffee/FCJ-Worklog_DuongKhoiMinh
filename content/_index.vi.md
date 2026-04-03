@@ -7,11 +7,11 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Châu Gia Kiệt
+&emsp; **Họ và tên:** Dương Khôi Minh
 
-&emsp; **Số điện thoại:** 0836769459
+&emsp; **Số điện thoại:** 0938145188
 
-&emsp; **Email:** kietcgse180513@fpt.edu.vn
+&emsp; **Email:** hominhlanhat@gmail.com
 
 &emsp; **Trường:** Đại học FPT TP.HCM – FPTU
 
@@ -23,9 +23,9 @@ chapter: false
 
 &emsp; **Vị trí thực tập:** FCJ Cloud Intern
 
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
+&emsp; **Thời gian thực tập:** Từ ngày 05/01/2026 đến ngày 03/04/2026
 
-![Châu Gia Kiệt - Ảnh đại diện](/images/Avatar.jpg)
+![Dương Khôi Minh - Ảnh đại diện](/images/Avatar.jpg)
 
 
 

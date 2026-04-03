@@ -1,42 +1,28 @@
 ---
 title: "Worklog Tuần 1"
-date: 2025-09-06
+date: 2026-01-05
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
 
+### Mục tiêu tuần 1
 
-### Mục tiêu tuần 1:
+- Ôn lại các dịch vụ AWS cốt lõi và bối cảnh dự án.
+- Hình thành và sàng lọc ý tưởng dự án.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Tìm hiểu về tổ chức và các dịch vụ cơ bản của AWS.
-
-## Các công việc cần triển khai trong tuần này
+### Các công việc cần triển khai trong tuần này
 
 | STT | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 |-----|-----------|--------------|-----------------|----------------|
-| 1 | - Tham gia buổi kick-off của FCJ<br>- Tìm hiểu về tổ chức<br>- Tạo nhóm cùng thực hiện các dự án | 06/09/2025 | 06/09/2025 | |
-| 2 | - Tạo tài khoản AWS<br>- Xem và vẽ lại kiến trúc mẫu trên phần mềm draw.io<br>- Tìm hiểu về điện toán đám mây | 09/09/2025 | 09/09/2025 | [cloudjourney.awsstudygroup.com](https://cloudjourney.awsstudygroup.com/) |
-| 3 | - Tìm hiểu về mục tiêu của chương trình The First Cloud Journey và website AWS<br>- Thực hiện các thao tác đầu trên tài khoản đã tạo:<br>&emsp;+ Tạo budget<br>&emsp;+ Tạo groups<br>&emsp;+ Thiết lập bảo mật hai lớp<br>- Tìm hiểu về Support Centre của website AWS, cách hoạt động và cách gửi yêu cầu hỗ trợ | 10/09/2025 | 10/09/2025 | [cloudjourney.awsstudygroup.com](https://cloudjourney.awsstudygroup.com/) |
-| 4 | - Tạo VPC<br>- Chỉnh cấu hình cho VPC<br>- Tạo Subnet<br>- Cấu hình Subnet public để tự động cấp phát IP công cộng<br>- Tạo Internet Gateway<br>- Cấu hình Internet Gateway để kết nối với VPC<br>- Tạo Route Table<br>- Cấu hình Route Table để kết nối với Internet Gateway<br>- Cấu hình Subnet Associations thành công<br>- Tạo Security Group (public)<br>- Tạo Security Group (private) | 11/09/2025 | 14/09/2025 | [cloudjourney.awsstudygroup.com](https://cloudjourney.awsstudygroup.com/) |
+| 1 | - Kick-off và thống nhất kỳ vọng.<br>- Rà soát kế hoạch và đầu ra của kỳ thực tập. | 05/01/2026 | 05/01/2026 | Tài liệu nội bộ |
+| 2 | - Ôn lại các dịch vụ AWS cốt lõi (IAM, S3, EC2, RDS).<br>- Ghi nhận ràng buộc và khả năng áp dụng cho dự án. | 06/01/2026 | 06/01/2026 | Tài liệu AWS |
+| 3 | - Brainstorm ý tưởng và vấn đề cần giải quyết.<br>- Ghi nhận giả định và rủi ro. | 07/01/2026 | 07/01/2026 | Tài liệu nội bộ |
+| 4 | - Phác thảo ý tưởng dự án và phạm vi MVP.<br>- Thảo luận và nhận phản hồi từ leader. | 08/01/2026 | 09/01/2026 | Tài liệu nội bộ |
 
-## Kết quả đạt được tuần 1
+### Kết quả đạt được tuần 1
 
-* Tham gia buổi kick-off và làm quen với các thành viên trong First Cloud Journey.
-*  Hiểu về tổ chức và các mục tiêu của chương trình.
-* Thành công tạo nhóm để thực hiện các dự án.
-* Tạo tài khoản AWS thành công và thực hiện các thao tác cơ bản:
-  * Thiết lập budget.
-  * Tạo groups.
-  * Kích hoạt bảo mật hai lớp (2FA).
-* Tìm hiểu và vẽ lại kiến trúc mẫu trên draw.io.
-* Nắm được khái niệm cơ bản về điện toán đám mây.
-* Hiểu cách sử dụng Support Centre của AWS và cách gửi yêu cầu hỗ trợ.
-* Thành công thực hiện các tác vụ liên quan đến VPC:
-  * Tạo và cấu hình VPC.
-  * Tạo và cấu hình Subnet (bao gồm Subnet public với IP công cộng tự động).
-  * Tạo và gắn Internet Gateway vào VPC.
-  * Tạo và cấu hình Route Table, kết nối với Internet Gateway.
-  * Cấu hình Subnet Associations thành công.
-  * Tạo Security Group cho cả public và private.
+- Thống nhất kỳ vọng, timeline và deliverable.
+- Rà soát các dịch vụ AWS chính và hướng áp dụng cho dự án.
+- Sàng lọc được các ý tưởng khả thi kèm tiêu chí chọn lựa.
+- Phác thảo phạm vi MVP và nhận phản hồi ban đầu.

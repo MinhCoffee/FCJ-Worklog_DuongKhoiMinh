@@ -1,39 +1,27 @@
 ---
 title: "Week 8 Worklog"
-date: 2025-10-28
+date: 2026-03-02
 weight: 8
 chapter: false
-pre: " <b> 1.8. </b> "
+pre: "<b>1.8. </b>"
 ---
 
+### Week 8 Objectives
 
+- Deploy the frontend to S3 and CloudFront.
 
-### Week 8 Objectives: 
+### Tasks to be carried out this week
 
-* **Complete the mid-term exam** (October 31st) with good results.
-* Begin implementing the basic **CRUD (Create, Read, Update, Delete)** functionalities for the **Travel-Guided** project.
-* Plan the detailed integration of **AWS Serverless AI services** (such as **Rekognition**) into the project.
-* Continue to **reinforce core AWS knowledge** relevant to the project (Lambda, DynamoDB, API Gateway).
+| Day | Task | Start Date | Completion Date | Reference Material |
+|-----|------|------------|-----------------|---------------------|
+| 1 | - Prepare frontend build config and environment variables.<br>- Verify build output locally. | 02/03/2026 | 02/03/2026 | Internal notes |
+| 2 | - Create S3 bucket and upload build artifacts.<br>- Set correct cache and metadata. | 03/03/2026 | 03/03/2026 | AWS docs |
+| 3 | - Configure CloudFront distribution and HTTPS.<br>- Set cache behaviors and invalidation rules. | 04/03/2026 | 05/03/2026 | AWS docs |
+| 4 | - Smoke test the deployment.<br>- Fix routing and CORS issues if any. | 05/03/2026 | 06/03/2026 | Internal notes |
 
----
+### Week 8 Achievements
 
-### Tasks to be Deployed This Week:
-
-| Day | Task | Start Date | Completion Date | Resources |
-| :--- | :--- | :--- | :--- | :--- |
-| Monday | - **Final comprehensive review** of knowledge in preparation for the mid-term exam. <br> - Review difficult questions and easily confused concepts (IAM, Security Group, NACL). | 28/10/2025 | 28/10/2025 | Personal notes, AWS Builders |
-| Tuesday | - Mental and tool preparation for the exam. <br> - **Hands-on:** Start setting up the development environment for the **Travel-Guided** project. | 29/10/2025 | 30/10/2025 | |
-| Wednesday | - **Mid-term Exam** (October 31st) - Completion of the most important objective. | 31/10/2025 | 31/10/2025 | |
-| Thursday | - Begin implementing the first basic **CRUD** functionalities (Example: creating a post, updating a post). <br> - Research and trial deployment of **AWS Lambda** and **DynamoDB** (to build a Serverless API). | 01/11/2025 | 01/11/2025 | AWS Lambda & DynamoDB documentation |
-| Friday | - **Plan Serverless AI integration:** <br> &emsp; + Research **AWS Rekognition** and the intended functionalities (analyzing location images, object recognition...). <br> &emsp; + Define the data flow (S3 -> Lambda -> Rekognition) and necessary components. | 02/11/2025 | 02/11/2025 | AWS Rekognition documentation, YouTube |
-
----
-
-### Week 8 Achievements: 
-
-* **Completed the mid-term exam** (October 31st).
-* **Successfully set up** the basic development environment for the project.
-* **Started building** the initial **Create/Read** functionalities for the **Travel-journal** project using **AWS Lambda** and **DynamoDB**.
-* **Researched and detailed the plan** for integrating the **AWS Rekognition** service into the project, understanding the image processing workflow.
-* **Reinforced knowledge** of important Serverless services (Lambda, DynamoDB) essential for project development.
-* ...
+- Frontend build pipeline stabilized.
+- Frontend deployed to S3 with CloudFront CDN.
+- HTTPS and caching configured for production.
+- Post-deployment issues resolved.

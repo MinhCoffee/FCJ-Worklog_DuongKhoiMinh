@@ -1,6 +1,6 @@
 ---
-title: "Feedback from an FCJ Community Member"
-date: 2025-01-01
+title: "Feedback After the FCJ Internship"
+date: 2026-04-03
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
@@ -8,72 +8,44 @@ pre: " <b> 7. </b> "
 
 ## Introduction
 
-After a truly memorable internship at FCJ, I feel incredibly fortunate and want to express my heartfelt thanks. This journey was not just about work, but a series of joyful learning experiences. I would like to share some thoughts and small suggestions, hoping they will be helpful for FCJ!
-
----
+After 12 weeks of internship at FCJ, I am grateful for the practical learning experiences and the strong support from the team. Below is a concise feedback summary with a few suggestions to make the program even better.
 
 ## Overall Assessment
 
 ### 1. Work Environment
 
-Honestly, the environment at FCJ is what I loved the most. Everyone is incredibly friendly and open, and I never once felt out of place. Even when asking the most "naive" questions, I always received enthusiastic support, sometimes even outside of work hours. The neat, super comfortable workspace also helped me get into the 'flow' much faster!
+The environment is friendly, open, and encourages questions. I felt welcomed and supported when facing difficulties.
 
 ### 2. Mentor Support
 
-I am truly grateful to my Mentor for the patience and detail in every guidance session. What I valued most is that the Mentor always gave me the opportunity to try and solve problems myself. Instead of providing the answer, the Mentor taught me how to find it. That is the most precious lesson!
+Mentors guide with a discovery approach, helping interns find solutions instead of providing direct answers. Regular reviews are clear and constructive.
 
-The mentor team is super nice, providing quick support with procedures, creating all the conditions for an intern like me to feel secure in my work. With the active support from the mentors and the workshops, my team was able to quickly complete the project and successfully deploy it.
+### 3. Relevance of Work
 
-### 3. Alignment between Work and Academic Major
+The tasks are aligned with my major and highly practical: from auth/RBAC and order flows to deploying the frontend on S3/CloudFront.
 
-The assigned work had a close connection to the knowledge I learned at university. More importantly, I got to approach new areas and practical skills that textbooks haven't yet covered. Thanks to this, I both strengthened my foundation and "levelled up" my practical skills. Particularly, in cloud skills, infrastructure, and AWS services, along with responsible teamwork with everyone in the team.
+### 4. Learning and Growth
 
-### 4. Opportunity for Learning & Skill Development
+I learned how to work in sprints, write documentation, and improve team communication. Knowledge-sharing sessions helped me understand the bigger picture.
 
-This period helped me "pocket" a lot of new skills: from using professional project management tools, collaboration skills, to professional communication in a corporate setting. The practical experience sharing from the Mentor and everyone served as a compass, helping me define a better direction for my future career.
+### 5. Culture and Collaboration
 
-### 5. Culture & Team Spirit
+Team collaboration is strong, feedback is fast, and respect is consistent. This kept the project progress stable.
 
-FCJ's culture is excellent: respectful, professional yet never dull. Especially when there was a pressing project, everyone worked together, providing support regardless of position. The feeling of being part of the collective, contributing even as a member of the FCJ community, is truly meaningful!
+### 6. Policies and Process
 
-### 6. Intern Policies / Benefits
+Flexible working time and clear processes helped me balance study and internship effectively.
 
-I really appreciate the flexibility regarding work hours when needed. Being able to participate in the workshops (sharing knowledge and skills) is a huge plus, helping community members feel invested in and developed seriously.
+## Suggestions for Improvement
 
----
+- Standardize onboarding materials and a first-week checklist.
+- Increase feedback cadence (every 1-2 weeks) to adjust goals early.
+- Add short focused workshops (AWS cost, security, best practices).
 
-## Other Questions
+## Future Interest
 
-### What was the most satisfying thing during your internship?
+If there is a suitable opportunity, I would love to continue contributing to FCJ projects.
 
-The most satisfying thing: Definitely the company culture and the excellent support from the Mentor/Team. This is the decisive factor for an FCJ member to grow and feel committed.
+## Closing
 
-### What do you think the company needs to improve for future interns?
-
-Perhaps adding more WORKSHOPS so members can better understand the learning roadmap, exchange ideas, and timely supplement knowledge to keep up with project progress.
-
-### If you were to recommend it to friends, would you advise them to intern here? Why?
-
-**Absolutely YES!** Because this is a place where you get to challenge yourself and learn from A-Z seriously, instead of just doing simple administrative tasks. The friendly environment and the support from the senior members are hard to find elsewhere.
-
----
-
-## Suggestions & Aspirations
-
-### Do you have any suggestions to improve the internship experience?
-
-I suggest considering setting aside a small "budget" for **Team Lunch/Team Bonding periodically (monthly)** so everyone has a chance to relax and bond more.
-
-### Do you want to continue this program in the future?
-
-I **very much hope** to have the opportunity to continue accompanying, contributing, and developing with FCJ in the future, if a suitable position is available, and I hope I can contribute to developing the next generations of the community.
-
-### Other Feedback (free sharing)
-
-I genuinely thank FCJ for creating such a meaningful and valuable internship program. This is not just a workplace but also a place where I matured significantly. I hope the company's internship program will continue to grow, helping many other young people have an experience as wonderful as mine.
-
----
-
-## Conclusion
-
-**Thank you FCJ once again for everything! Wishing the company/community continuous strong development!**
+Thank you to FCJ and the mentors for creating a supportive learning environment that helped me grow both technically and professionally.

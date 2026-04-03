@@ -1,66 +1,57 @@
 ---
 title: "Self-Assessment"
-date: 2025-01-01
+date: 2026-04-03
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-## Internship Performance Evaluation
+## Internship Summary
 
-During my 12-week internship at **Amazon Web Services Vietnam Co., Ltd.** (September 6, 2024 - December 24, 2024), I underwent a transformative journey from learning basic Cloud Computing concepts to successfully building a production-ready Serverless application on AWS.
+During the 12-week FCJ internship (Jan 5, 2026 - Apr 3, 2026), I worked on an order management and production line reporting system deployed on AWS.
 
-### Project Overview
+### Key Scope
 
-I participated in developing the **Travel Guide Application** - a travel journey sharing platform with a complete Serverless architecture, including:
+- Bootstrapped the backend, environment config, logging, and auth (login/logout).
+- Built RBAC for roles (admin, lineLeader, staff).
+- Implemented admin order workflows and lineLeader reporting.
+- Optimized login, standardized role enums, and improved DB performance.
+- Deployed the frontend to S3/CloudFront, configured caching, and verified post-deploy.
+- Ran UAT, fixed issues, and updated documentation.
+- Researched AI integration options and proposed a PoC scope.
 
-**Technical Achievements:**
-- Built **Backend API** with 15+ Lambda functions, API Gateway, and Cognito Authentication
-- Designed **6 DynamoDB tables** optimized with GSI for complex query patterns
-- Integrated **AI Image Processing** with Rekognition, SQS pipeline, and SNS/SES notifications
-- Implemented **Infrastructure as Code** with deployment automation scripts
-- Configured **IAM roles & policies** following least privilege principle
+### Key Outcomes
 
-**Skills Developed:**
-- Understand **Python** for Lambda functions and **React** for Frontend
-- Proficient in **AWS SAM**, Docker, and CI/CD workflows
-- Solved complex problems: CORS, cross-stack references, async processing
-- Debugged and optimized performance in production environment
+- Completed role-based order and progress reporting flows.
+- Improved performance with indexing and query tuning.
+- Stabilized frontend deployment with CDN and HTTPS configuration.
+- Addressed UAT feedback with production-ready fixes.
 
-**Soft Skills:**
-- Effective teamwork in Agile environment
-- Self-learning and rapid application of new technologies (from zero to production deployment in 12 weeks)
-- Comprehensive documentation for team and end-users
+### Self-Assessment Criteria
 
-### Evaluation Methodology
+| No. | Criteria | Brief Evidence | Excellent | Good | Needs Improvement |
+|-----|----------|----------------|-----------|------|-------------------|
+| 1 | **Technical Knowledge** | Auth/RBAC, order workflow, S3/CloudFront, DB tuning | ☐ | ✅ | ☐ |
+| 2 | **Learning & Adaptability** | Quickly learned project workflow and relevant AWS services | ✅ | ☐ | ☐ |
+| 3 | **Initiative & Problem Solving** | Analyzed issues and proposed solutions proactively | ☐ | ✅ | ☐ |
+| 4 | **Quality & Delivery** | Delivered weekly milestones with reviews | ☐ | ✅ | ☐ |
+| 5 | **Testing & Quality Assurance** | UAT, regression tests, fixes from feedback | ☐ | ✅ | ☐ |
+| 6 | **Communication** | Clear updates in worklog and team discussions | ☐ | ✅ | ☐ |
+| 7 | **Teamwork** | Collaborated and supported teammates | ☐ | ✅ | ☐ |
+| 8 | **Product Thinking & Estimation** | Need to improve estimation and prioritization | ☐ | ☐ | ✅ |
 
-To objectively assess my internship performance, I use the criteria table below, reflecting both achievements and areas for improvement:
+### Strengths
 
-| No. | Criteria | Detailed Description & Evidence | Excellent | Good | Needs Improvement |
-|-----|----------|--------------------------------|-----------|------|-------------------|
-| 1 | **Technical Knowledge & Skills** | Proficient in AWS services (Lambda, DynamoDB, S3, Cognito, Rekognition), Infrastructure as Code (SAM/CloudFormation), Python/React. Successfully deployed production app with 15+ Lambda functions, 6 DynamoDB tables, AI processing pipeline. | ☐ | ✅ | ☐ |
-| 2 | **Learning Speed & Adaptability** | From zero AWS knowledge to production deployment in 12 weeks. Self-taught SAM, Docker, multi-stack architecture. Resolved complex issues (CORS, cross-stack refs) without prior experience. | ✅ | ☐ | ☐ |
-| 3 | **Initiative & Creativity** | Self-researched and proposed multi-stack pattern for deployment optimization. Proactively debugged and fixed issues (CORS, IAM permissions). Independently wrote deployment automation scripts. | ✅ | ☐ | ☐ |
-| 4 | **Responsibility & Commitment** | Completed 12-week timeline with clear weekly deliverables. High code quality with proper error handling and logging. Comprehensive documentation for team. | ✅ | ☐ | ☐ |
-| 5 | **Discipline & Process** | Followed best practices (least privilege IAM, proper git workflow). Adhered to coding standards and security guidelines. Consistent daily progress tracking. | ✅ | ☐ | ☐ |
-| 6 | **Receptiveness to Feedback** | Applied feedback to improve architecture (transitioned from monolithic to multi-stack). Learned from code reviews and refactored accordingly. Need to improve proactively seeking feedback earlier. | ☐ | ✅ | ☐ |
-| 7 | **Communication Skills** | Wrote detailed documentation (worklog, technical docs). Presented ideas clearly in team meetings. Need to improve explaining technical concepts to non-technical audience. | ☐ | ✅ | ☐ |
-| 8 | **Teamwork** | Collaborated effectively with team members. Shared knowledge and supported colleagues. Contributed to code reviews and technical discussions. | ✅ | ☐ | ☐ |
-| 9 | **Professional Attitude** | Respected colleagues, deadlines, and commitments. Maintained positive attitude when facing challenges. Professional communication in all situations. | ✅ | ☐ | ☐ |
-| 10 | **Problem-Solving Mindset** | Successfully debugged complex issues (CORS, async processing, IAM). Implemented creative solutions (SQS pipeline, multi-stack). Analyzed trade-offs and made informed decisions. | ✅ | ☐ | ☐ |
-| 11 | **Actual Contribution** | Delivered production-ready application with full features. Created reusable infrastructure code. Documented lessons learned for future projects. Positive team feedback on code quality. | ✅ | ☐ | ☐ |
-| 12 | **Overall** | Exceeded expectations for intern position. Progressed from beginner to independently deploying and maintaining production AWS infrastructure. Ready for junior developer role. | ✅ | ☐ | ☐ |
+- Fast learning curve with practical application.
+- Proactive execution and optimization.
+- Reliable teamwork and responsibility.
 
+### Areas to Improve
 
+- Improve time estimation and backlog prioritization.
+- Write clearer documentation for non-technical readers.
 
-### Conclusion
+### Next Steps
 
-The 12-week internship has been a challenging yet rewarding journey. From knowing nothing about AWS, I successfully deployed a production application with complex architecture, demonstrating rapid learning ability and effective problem-solving skills.
-
-What I'm most proud of is not just the technical skills acquired, but the mindset and approach to learning. I learned how to:
-- Break down complex problems into manageable pieces
-- Research effectively and apply knowledge quickly
-- Work independently while collaborating well with the team
-- Maintain quality standards even under pressure
-
-I believe this foundation will help me continue growing as a software engineer and contribute effectively to any team in the future.
+- Practice weekly planning and estimation.
+- Deepen knowledge on AWS monitoring, security, and cost optimization.

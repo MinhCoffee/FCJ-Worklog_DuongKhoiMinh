@@ -10,11 +10,11 @@ chapter: false
 
 
 ### Student Information:
-&emsp; **Full Name:** Chau Gia Kiet
+&emsp; **Full Name:** Duong Khoi Minh
 
-&emsp; **Phone Number:** 0836769459
+&emsp; **Phone Number:** 0938145188
 
-&emsp; **Email:** kietcgse180513@fpt.edu.vn
+&emsp; **Email:** hominhlanhat@gmail.com
 
 &emsp; **University:** FPT University
 
@@ -26,9 +26,9 @@ chapter: false
 
 &emsp; **Internship Position:** FCJ Cloud Intern
 
-&emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
+&emsp; **Internship Duration:** From 05/01/2026 to 03/04/2026
 
-![Chau Gia Kiet - Profile Picture](/images/Avatar.jpg)
+![Duong Khoi Minh - Profile Picture](/images/Avatar.jpg)
 
 ### Report Content
 
