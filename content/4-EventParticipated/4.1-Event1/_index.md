@@ -38,6 +38,3 @@ pre: " <b> 4.1. </b> "
 
 This event gave me a more practical perspective on learning and applying AI. The prompt engineering session helped me understand that model output quality depends heavily on how context and constraints are designed. In addition, the real project showcases motivated me to focus on building solutions with real-world value.
 
-## Event Photos
-
-* Add your event photos here.
