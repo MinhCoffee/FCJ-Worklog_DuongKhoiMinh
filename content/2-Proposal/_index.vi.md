@@ -1,156 +1,204 @@
 ---
 title: "Bản đề xuất"
-date: "2025-10-10"
+date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
 
-{{% notice info %}}
-📄 **Tải xuống Bản đề xuất đầy đủ:** [Proposal Template.docx](/documents/Proposal%20Template.docx)
-{{% /notice %}}
+# Hệ Thống Quản Lý Sản Xuất Điện Tử Hỗ Trợ AI
+## (Nền tảng hợp nhất trên AWS cho lập kế hoạch & giám sát sản xuất)
 
-# Travel Journal
-## Giải pháp AWS Serverless cho nhật ký du lịch
+### 1. Tóm tắt điều hành
+Hệ thống Quản lý Sản xuất hỗ trợ AI được thiết kế cho các doanh nghiệp sản xuất điện tử vừa và nhỏ (SME) nhằm nâng cao quản lý đơn hàng, lập kế hoạch và giám sát sản xuất.
+Hệ thống hỗ trợ nhiều dây chuyền (SMT, DIP, kiểm tra) với khả năng mở rộng khi số lượng đơn hàng và dây chuyền tăng. Nền tảng cho phép quản lý dữ liệu sản xuất tập trung, trực quan hóa tiến độ và phát hiện sớm các chậm trễ trên từng công đoạn.
+Giải pháp tận dụng các dịch vụ AWS như ECS, ECR, RDS, S3, CloudFront, Route 53, CloudWatch, Secrets Manager, SNS, SQS, SES để đảm bảo hệ thống ổn định, bảo mật, dễ mở rộng và tối ưu chi phí.
 
-### 1. Tóm tắt điều hành  
-Travel Journal Web ra đời với mong muốn giúp mỗi người lưu giữ hành trình của cuộc đời — không chỉ là những chuyến đi, mà còn là ký ức, cảm xúc và câu chuyện đằng sau từng bức ảnh. Ứng dụng kết nối con người với trải nghiệm, biến mỗi chuyến đi thành một phần trong “bản đồ ký ức” của riêng họ.
+Ngoài ra, hệ thống tích hợp thành phần AI để hỗ trợ người dùng tra cứu nhanh thông tin liên quan đến đơn hàng, lịch sản xuất (schedule), các chỉ số OEE, biểu đồ Gantt và các tình huống chậm trễ đơn giản. Người dùng có thể đặt các câu hỏi tự nhiên như "đơn hàng X đang ở công đoạn nào?", "dây chuyền SMT 1 hôm nay OEE bao nhiêu?", "công đoạn nào đang gây trễ cho kế hoạch tuần này?" và nhận được câu trả lời dựa trên dữ liệu sản xuất đã được thu thập và tổng hợp.
 
-Người dùng có thể tải lên hình ảnh, ghi chú địa điểm, và hệ thống tự động nhận diện loại cảnh (biển, núi, thành phố…) nhờ Amazon Rekognition. Dữ liệu hành trình được hiển thị trực quan trên bản đồ thời gian thực bằng Amazon Location Service, mang đến trải nghiệm sinh động và gắn kết.
+### 2. Tuyên bố vấn đề
+#### Vấn đề đặt ra
+Trong các doanh nghiệp sản xuất điện tử SME, bài toán hiện tại thường gặp:
+- Lập kế hoạch sản xuất thủ công bằng Excel, khó tối ưu dây chuyền và công suất.
+- Không có khả năng theo dõi tiến độ sản xuất theo thời gian thực trên từng công đoạn.
+- Dữ liệu đơn hàng, lệnh sản xuất và báo cáo phân tán ở nhiều file, nhiều hệ thống.
+- Khó đánh giá năng lực dây chuyền, thời gian chờ và các điểm nghẽn trong quy trình.
+- Hệ thống nội bộ khó mở rộng, phụ thuộc vào hạ tầng on-premise, thiếu cơ chế giám sát tập trung.
 
-Nền tảng tận dụng sức mạnh của AWS Serverless Architecture (Lambda, API Gateway, S3, DynamoDB, Cognito), đảm bảo hiệu năng cao, bảo mật mạnh mẽ và khả năng mở rộng linh hoạt 
+#### Giải pháp
+Hệ thống cung cấp nền tảng web tập trung để quản lý và thống kê sản xuất:
+- Backend xử lý logic nghiệp vụ (đơn hàng, lệnh sản xuất, kế hoạch, báo cáo) chạy dưới dạng container trên ECS.
+- Giao diện web cho phép quản lý, theo dõi tiến độ, xem dashboard tình trạng dây chuyền.
+- Dữ liệu nghiệp vụ được lưu trữ trên RDS với mô hình quan hệ, hỗ trợ truy vấn báo cáo.
+- Các file tài liệu sản xuất (POM/SOOP, biểu mẫu) và artifact triển khai được lưu tách biệt trên 3 bucket S3.
+- Tác vụ nền (ví dụ gửi thông báo, xử lý batch) sử dụng SQS để tách khỏi luồng chính.
+- SNS và SES hỗ trợ gửi cảnh báo, thông báo email cho quản lý/kỹ thuật khi có sự cố.
+- CloudWatch và Secrets Manager giúp giám sát, bảo mật thông tin kết nối và cấu hình hệ thống.
+- Thành phần AI được tích hợp để truy vấn dữ liệu sản xuất theo ngôn ngữ tự nhiên, hỗ trợ người dùng xem nhanh tình trạng đơn hàng, lịch sản xuất, OEE, biểu đồ Gantt, điểm nghẽn và các chậm trễ đơn giản mà không cần tự lọc nhiều màn hình/báo cáo.
 
-### 2. Tuyên bố vấn đề  
-*Vấn đề hiện tại*  
-Nhiều người yêu du lịch muốn lưu giữ hành trình của mình, nhưng các nền tảng hiện nay chỉ cho phép đăng ảnh hoặc ghi chú rời rạc, thiếu sự kết nối trực quan giữa cảm xúc, hình ảnh và địa điểm thực tế. Việc sắp xếp kỷ niệm trở nên khó khăn, không thể xem lại hành trình trên bản đồ hay thống kê được số điểm đến, thời gian và trải nghiệm theo từng chuyến đi. Bên cạnh đó, các nền tảng lưu trữ đám mây phổ biến lại không cá nhân hóa trải nghiệm cho từng người dùng. 
+#### Lợi ích và hoàn vốn đầu tư
+- Giảm thao tác thủ công trong quản lý và tổng hợp số liệu sản xuất.
+- Cải thiện khả năng theo dõi tiến độ và phát hiện sớm chậm trễ trên dây chuyền.
+- Tạo nguồn dữ liệu tập trung, phục vụ phân tích, báo cáo và áp dụng AI trong tương lai.
+- Sử dụng hạ tầng AWS giúp giảm chi phí đầu tư ban đầu, trả theo mức sử dụng, dễ mở rộng khi quy mô nhà máy tăng.
 
-*Giải pháp*  
-Travel Journal Web được xây dựng dưới dạng ứng dụng web, tận dụng kiến trúc AWS Serverless để tối ưu hiệu năng và chi phí.
+### 3. Kiến trúc giải pháp
+Hệ thống sử dụng kiến trúc cloud triển khai trên AWS.
+Người dùng truy cập qua giao diện web được host trên Amazon S3 và phân phối qua CloudFront. Các request được định tuyến qua Amazon Route 53 đến backend chạy trên ECS. Backend xử lý dữ liệu và lưu trữ vào cơ sở dữ liệu quan hệ trên Amazon RDS.
 
-Hệ thống sử dụng Amazon S3 lưu trữ hình ảnh và dữ liệu tĩnh, được phân phối toàn cầu qua Amazon CloudFront. Amazon Cognito quản lý đăng nhập an toàn, trong khi API Gateway và AWS Lambda xử lý logic phía máy chủ. Hình ảnh tải lên S3 được phân tích bởi Amazon Rekognition, lưu kết quả và vị trí vào Amazon DynamoDB, và hiển thị trực quan qua Amazon Location Service.
+Các file POM/SOOP và tài liệu liên quan được lưu trên một S3 bucket chuyên biệt; frontend được build và deploy lên một S3 bucket riêng; artifact và gói triển khai ứng dụng được lưu trên một S3 bucket khác để phục vụ quy trình deploy. Các tác vụ nền và xử lý bất đồng bộ sử dụng Amazon SQS, trong khi thông báo và cảnh báo sử dụng Amazon SNS và Amazon SES.
 
-Toàn bộ hệ thống được giám sát bằng Amazon CloudWatch, theo dõi thông lượng, lỗi, độ trễ và dung lượng cơ sở dữ liệu; cảnh báo được gửi qua SNS. Các dữ liệu và khóa bảo mật được quản lý bởi AWS KMS và Secrets Manager.
+Thông tin nhạy cảm như thông tin đăng nhập database, API key, cấu hình email được quản lý an toàn bằng AWS Secrets Manager. Toàn bộ log, metric, cảnh báo được giám sát tập trung qua Amazon CloudWatch.
 
-Giải pháp này mang đến một ứng dụng du lịch thông minh, bảo mật và tiết kiệm, giúp người dùng dễ dàng lưu giữ và xem lại hành trình của mình mọi lúc, mọi nơi.
+<img height="500" src="/images/2-Proposal/architecture.jpg" width="500" alt="Proposal Image"/>
 
-*Lợi ích và hoàn vốn đầu tư (ROI)* 
-Giải pháp giúp người dùng dễ dàng lưu trữ và chia sẻ hành trình du lịch, đồng thời tạo nền tảng dữ liệu để mở rộng thành ứng dụng du lịch cộng đồng trong tương lai. Với chi phí chỉ khoảng 14.55 USD/tháng, ứng dụng có thể phục vụ 100–200 người dùng mà không cần máy chủ vật lý. Thời gian hoàn vốn ước tính 6–8 tháng, nhờ tiết kiệm chi phí vận hành, bảo trì và lưu trữ ảnh tập trung.  
+#### Dịch vụ AWS sử dụng
+- Amazon ECS: chạy backend quản lý sản xuất
+- Amazon ECR: lưu trữ Docker image của các service backend
+- Amazon RDS (PostgreSQL/MySQL): lưu dữ liệu sản xuất (đơn hàng, lệnh, kế hoạch, tiến độ)
+- Amazon S3 (Bucket 1): lưu trữ file POM/SOOP và tài liệu sản xuất
+- Amazon S3 (Bucket 2): host frontend (React app)
+- Amazon S3 (Bucket 3): lưu artifact và gói triển khai ứng dụng
+- Amazon CloudFront: phân phối frontend qua CDN
+- Amazon Route 53: quản lý domain và định tuyến tên miền
+- Amazon SES: gửi email (thông báo, cảnh báo, báo cáo định kỳ)
+- Amazon SQS: hàng đợi cho tác vụ nền, xử lý batch, retry
+- Amazon SNS: gửi thông báo/cảnh báo đến quản lý, tích hợp với kênh khác
+- Amazon CloudWatch: giám sát log, metric, thiết lập alarm
+- AWS Secrets Manager: lưu trữ thông tin nhạy cảm (DB password, API key)
 
-### 3. Kiến trúc giải pháp  
-Hệ thống Travel Journal Web được xây dựng hoàn toàn trên kiến trúc AWS Serverless, tối ưu hiệu năng, bảo mật và khả năng mở rộng. Giao diện web tĩnh được lưu trữ trên Amazon S3, phân phối toàn cầu qua Amazon CloudFront và bảo vệ bởi AWS WAF, ACM và Route 53. Người dùng xác thực thông qua Amazon Cognito, trong khi Amazon API Gateway kết hợp AWS Lambda đảm nhiệm xử lý nghiệp vụ phía máy chủ. Ảnh người dùng tải lên được lưu tại Amazon S3 và xử lý tự động qua hàng đợi Amazon SQS, AWS Lambda, Amazon Rekognition và Amazon Location Service. Kết quả được lưu trữ trong Amazon DynamoDB và phân phối lại qua S3. Hệ thống hỗ trợ cơ chế retry, DLQ, gửi thông báo bằng Amazon SNS, giám sát tập trung bằng Amazon CloudWatch và AWS X-Ray, đồng thời bảo mật dữ liệu bằng AWS IAM, KMS và Secrets Manager.
+#### Thiết kế thành phần
+**Frontend**
+- Host trên S3
+- Phân phối qua CloudFront
+- Cung cấp dashboard và giao diện quản lý sản xuất (đơn hàng, kế hoạch, dây chuyền)
 
-![Travel journal Architecture](/images/2-Proposal/proposal.jpg)
+**Backend**
+- Chạy trên ECS dưới dạng container
+- Xử lý logic nghiệp vụ: đơn hàng, lệnh sản xuất, lập lịch, báo cáo, API cho frontend
+- Gửi/nhận message với SQS/SNS để xử lý tác vụ nền
 
+**Database**
+- RDS lưu đơn hàng, kế hoạch sản xuất, tiến độ, lịch sử sản xuất, báo cáo
 
-*Dịch vụ AWS sử dụng*  
-- Amazon Route 53: Quản lý tên miền và định tuyến truy cập toàn cầu.
-- AWS Certificate Manager: Cấp phát và quản lý chứng chỉ SSL/TLS cho các endpoint bảo mật.
-- Amazon CloudFront: Phân phối nội dung tĩnh và động với độ trễ thấp.
-- AWS WAF: Bảo vệ ứng dụng khỏi các mối đe dọa web phổ biến.
-- AWS Lambda: Xử lý sự kiện và logic phía máy chủ mà không cần quản lý hạ tầng.
-- Amazon API Gateway: Trung gian giữa frontend và backend, tiếp nhận yêu cầu từ người dùng và chuyển đến AWS Lambda.
-- Amazon S3: Lưu trữ hình ảnh, dữ liệu người dùng, và nhật ký hoạt động.
-- Amazon DynamoDB: Lưu trữ dữ liệu phi quan hệ về hành trình, địa điểm và thông tin bài viết, tối ưu tốc độ truy cập.
-- Amazon Cognito: Quản lý xác thực và quyền truy cập người dùng.
-- Amazon Rekognition: Phân tích, nhận diện hình ảnh.
-- Amazon Location Service: Cung cấp dịch vụ định vị và bản đồ.
-- Amazon SNS: Gửi thông báo đến người dùng và quản trị viên.
-- Amazon SQS (Main Queue): Đệm các yêu cầu xử lý ảnh được gửi từ S3 trước khi kích hoạt Lambda.
-- Dead Letter Queue (DLQ): Lưu trữ các thông điệp lỗi hoặc sự kiện thất bại từ SQS để phục vụ xử lý và giám sát sau này.
-- Amazon CloudWatch: Giám sát hoạt động, log và hiệu năng dịch vụ.
-- AWS IAM: Quản lý quyền truy cập, cấp vai trò cho Lambda, API Gateway và dịch vụ AWS khác.
-- AWS KMS: Mã hóa dữ liệu ở trạng thái lưu trữ và truyền tải, tăng cường bảo mật.
-- AWS Secrets Manager: Lưu trữ và mã hóa thông tin bí mật
-- AWS CodeBuild: Biên dịch, kiểm thử và đóng gói mã nguồn tự động.
-- AWS CodePipeline: Tự động hóa toàn bộ quy trình CI/CD — từ commit, build, test đến triển khai ứng dụng lên môi trường AWS.
+**Lưu trữ file**
+- S3 bucket POM/SOOP lưu tài liệu quy trình, hướng dẫn sản xuất
+- S3 bucket frontend lưu mã build của ứng dụng web
+- S3 bucket artifact lưu các gói triển khai, backup cấu hình
 
+**Bảo mật & Giám sát**
+- Secrets Manager lưu cấu hình nhạy cảm
+- CloudWatch thu thập log, metric và gửi cảnh báo qua SNS/SES
 
-*Thiết kế thành phần*  
-- Xác thực người dùng: Amazon Cognito đảm nhiệm đăng nhập, quản lý token và phân quyền.
-- Xử lý logic ứng dụng: AWS Lambda tiếp nhận yêu cầu từ API Gateway để lưu hành trình, tải ảnh và phân tích dữ liệu.
-- Quản lý dữ liệu: Amazon DynamoDB lưu thông tin chuyến đi, OpenSearch hỗ trợ tìm kiếm và truy vấn nhanh.
-- Xử lý hàng đợi: Amazon SQS (Main Queue) tiếp nhận các yêu cầu xử lý ảnh từ S3 trước khi gọi Lambda; Dead Letter Queue (DLQ) lưu các thông điệp thất bại để xử lý sau.
-- Phân tích hình ảnh: Amazon Rekognition nhận diện nội dung và gắn nhãn tự động.
-- Dữ liệu bản đồ & định vị: Amazon Location Service theo dõi vị trí và hiển thị bản đồ.
-- Lưu trữ nội dung: Amazon S3 lưu trữ ảnh, dữ liệu người dùng và tệp tĩnh; nội dung được phân phối toàn cầu thông qua Amazon CloudFront (được bảo vệ bởi AWS WAF, SSL/TLS qua ACM, và định tuyến bởi Route 53).
-- Giám sát & thông báo: Amazon CloudWatch giám sát log và hiệu năng; SNS gửi cảnh báo và thông báo đến người dùng.
-- Phân phối & bảo mật web: AWS IAM quản lý quyền truy cập giữa các dịch vụ; AWS Secrets Manager và KMS bảo vệ thông tin nhạy cảm.
-- Triển khai & CI/CD: AWS CodeBuild và CodePipeline tự động hóa quy trình build, test và triển khai ứng dụng.
+### 4. Triển khai kỹ thuật
+**Các giai đoạn triển khai**
+Dự án phát triển qua 4 giai đoạn:
+- Phân tích yêu cầu và thiết kế kiến trúc theo stack thực tế.
+- Xây dựng backend container, push image lên ECR và triển khai ECS.
+- Triển khai frontend lên S3 + CloudFront, cấu hình domain qua Route 53.
+- Tích hợp RDS, SQS, SNS, SES, Secrets Manager và CloudWatch; kiểm thử tổng thể.
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án được chia thành hai phần chính — phát triển ứng dụng web và tích hợp hạ tầng AWS — với bốn giai đoạn triển khai cụ thể:
+**Yêu cầu kỹ thuật**
+**Yêu cầu hệ thống**
+- Ứng dụng web cho người dùng cuối.
+- Hỗ trợ lưu trữ nội dung hành trình và tài liệu đính kèm.
+- Có cơ chế giám sát, cảnh báo và gửi email thông báo.
 
-1. Phân tích yêu cầu và thiết kế kiến trúc: Nghiên cứu các dịch vụ AWS phù hợp (CloudFront, WAF, Cognito, DynamoDB , Lambda, API Gateway, S3...) và vẽ sơ đồ kiến trúc tổng thể (Tháng 1).
-2. Tính toán chi phí và mô phỏng hệ thống: Ước tính chi phí từng dịch vụ bằng AWS Pricing Calculator, thử nghiệm quy trình xử lý ảnh và vị trí để kiểm tra tính khả thi. Tối ưu kiến trúc và tài nguyên: Giảm số request, tận dụng cache CloudFront và tối ưu dung lượng S3 để giảm chi phí; tinh chỉnh Lambda và API Gateway cho hiệu năng cao (Tháng 2).
-3. Phát triển, kiểm thử và triển khai: Lập trình ứng dụng web, kiểm thử bảo mật bằng WAF và giám sát hoạt động bằng CloudWatch (Tháng 3).
+**Công nghệ sử dụng**
+- Backend: Spring Boot (container hóa).
+- Frontend: React.
+- Database: Amazon RDS (PostgreSQL/MySQL).
+- Cloud: AWS (S3, CloudFront, ECS, ECR, Route 53, CloudWatch, Secrets Manager, SNS, SQS, SES).
 
-*Yêu cầu kỹ thuật*  
-- Frontend: Ứng dụng web xây dựng bằng React.js, triển khai tĩnh trên Amazon S3, phân phối toàn cầu qua CloudFront giúp tăng tốc độ và giảm tải backend.
-- Bảo mật & truy cập: AWS WAF chống tấn công web; AWS Certificate Manager (ACM) cung cấp chứng chỉ SSL/TLS, Amazon Cognito quản lý xác thực người dùng (email, OAuth2).
-- Backend: API Gateway tiếp nhận yêu cầu, chuyển đến AWS Lambda xử lý nghiệp vụ như ghi nhật ký, tải ảnh, truy vấn dữ liệu.
-- Xử lý hàng đợi: Amazon SQS (Main Queue) đệm các yêu cầu xử lý ảnh được kích hoạt từ S3, trong khi Dead Letter Queue (DLQ) lưu trữ thông điệp lỗi để xử lý sau.
-- Cơ sở dữ liệu: Amazon DynamoDB lưu trữ dữ liệu hành trình, bài viết, và thông tin người dùng
-- Phân tích ảnh: Amazon Rekognition nhận diện cảnh vật, khuôn mặt, gợi ý nhãn ảnh.
-- Định vị & bản đồ: Amazon Location Service trực quan hóa tọa độ GPS trên bản đồ tương tác.
-- Giám sát hệ thống: CloudWatch thu thập log, AWS Secrets Manager vàKMS bảo vệ thông tin nhạy cảm.
-- Thông báo: Amazon SNS gửi cảnh báo khi có lỗi hệ thống hoặc người dùng mới.
-- Triển khai & CI/CD: AWS CodeBuild và AWS CodePipeline tự động hóa quy trình build, test và triển khai ứng dụng.
+### 5. Lộ trình & Mốc triển khai
+- Trước phát triển: Làm rõ phạm vi chức năng, thiết kế kiến trúc và chuẩn naming cho 3 bucket S3.
+- Giai đoạn phát triển: Hoàn thiện backend trên ECS/ECR, tích hợp RDS, SQS, SNS, SES.
+- Giai đoạn triển khai: Deploy frontend qua S3/CloudFront, kết nối domain Route 53.
+- Sau triển khai: Theo dõi CloudWatch, tối ưu chi phí và hiệu năng theo dữ liệu thực tế.
 
-### 5. Lộ trình & Mốc triển khai  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và tích lũy kiến thức 
-    - Tháng 2: Thiết kế, tính chi phí và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+### 6. Ước tính ngân sách
+**Chi phí hạ tầng**
+Hệ thống triển khai trên AWS với chi phí theo mức sử dụng thực tế cho quy mô nhỏ.
+1. Compute (Amazon ECS)
+    - Chạy backend container service.
+    - Chi phí: ~ $6.00 / tháng
+2. Container Registry (Amazon ECR)
+    - Lưu trữ image và version deploy.
+    - Chi phí: ~ $1.00 / tháng
+3. Database (Amazon RDS)
+    - Lưu dữ liệu nghiệp vụ ứng dụng.
+    - Chi phí: ~ $12.00 / tháng
+4. Storage (Amazon S3 - 3 buckets)
+    - Bucket POM/SOOP, bucket frontend, bucket artifact/deploy.
+    - Chi phí: ~ $2.00 / tháng
+5. CDN (Amazon CloudFront)
+    - Phân phối frontend và cache nội dung.
+    - Chi phí: ~ $1.50 / tháng
+6. DNS (Amazon Route 53)
+    - Quản lý domain và định tuyến truy cập.
+    - Chi phí: ~ $0.50 / tháng
+7. Queue & Notification (Amazon SQS + SNS)
+    - Xử lý tác vụ nền và cảnh báo sự kiện.
+    - Chi phí: ~ $2.00 / tháng
+8. Email Service (Amazon SES)
+    - Gửi email thông báo/xác minh.
+    - Chi phí: ~ $0.50 / tháng
+9. AWS Secrets Manager
+    - Lưu thông tin đăng nhập DB và secret ứng dụng.
+    - Chi phí: ~ $0.80 / tháng
+10. Monitoring (Amazon CloudWatch)
+    - Log, metric, dashboard, alarm.
+    - Chi phí: ~ $2.50 / tháng
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=e732e6253c20390cbb8d794f05b4a951dec9d574)
-  
+**Tổng chi phí ước tính**
+| Dịch vụ | Chi phí/tháng |
+|---|---|
+| ECS | $6.00 |
+| ECR | $1.00 |
+| RDS | $12.00 |
+| S3 (3 buckets) | $2.00 |
+| CloudFront | $1.50 |
+| Route 53 | $0.50 |
+| SQS + SNS | $2.00 |
+| SES | $0.50 |
+| Secrets Manager | $0.80 |
+| CloudWatch | $2.50 |
+| **Tổng** | **28.80** |
 
-*Chi phí hạ tầng* 
-- Amazon Route 53: 0,50 USD/tháng 
-- AWS Certificate Manager: 0,0 USD/tháng
-- Amazon CloudFront: 0,61 USD/tháng
-- AWS WAF: 0,6 USD/ tháng
-- AWS Lambda: 0,01 USD/tháng
-- Amazon API Gateway: 0,45 USD/tháng
-- Amazon S3: 1,47 USD/tháng
-- Amazon DynamoDB: 16,35 USD/tháng
-- Amazon Cognito: 5,00 USD/tháng
-- Amazon Rekognition: 10,08 USD/tháng
-- Amazon Location Service: 4,35 USD/tháng
-- Amazon SNS: 2,58 USD/tháng
-- Amazon SQS (Main Queue): 3,1 USD/tháng
-- Amazon CloudWatch: 6,87 USD/tháng
-- AWS IAM: 0,00 USD/tháng
-- AWS Secrets Manager: 0,4 USD/tháng
-- AWS KMS: 2,3 USD/tháng
-- AWS CodeBuild: 0,8 USD/tháng
-- AWS CodePipeline: 0,00 USD/tháng
+**Chi phí năm**
+~ $345.6 / năm
 
-*Tổng*: 61,78 USD/tháng, 946,56 USD/năm
+**Chi phí phát triển**
+- Không cần đầu tư máy chủ vật lý.
+- Tận dụng mô hình cloud trả theo mức dùng.
+- Dễ điều chỉnh ngân sách theo lưu lượng thực tế.
 
+### 7. Đánh giá rủi ro
+**Rủi ro**
+- Tăng chi phí khi traffic tăng nhanh hoặc truy vấn RDS chưa tối ưu.
+- Tồn đọng hàng đợi SQS trong giờ cao điểm.
+- Lỗi cấu hình secret gây gián đoạn kết nối dịch vụ.
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Vi phạm bảo mật hoặc mất quyền truy cập người dùng: Ảnh hưởng cao, xác suất rất thấp.
-- Tăng chi phí do Rikognition: Ảnh hưởng cao, xác suất trung bình
-- Sai lệch dữ liệu vị trí: Ảnh hưởng cao, xác suất thấp
+**Chiến lược giảm thiểu**
+- Thiết lập CloudWatch alarm cho ECS, RDS, SQS, SES.
+- Tối ưu truy vấn và index trên RDS.
+- Áp dụng nguyên tắc phân quyền tối thiểu và quản lý secret tập trung.
+- Cấu hình retry và theo dõi thông điệp lỗi trên hàng đợi.
 
-*Chiến lược giảm thiểu*  
-- Mạng: Sử dụng Amazon CloudFront để phân phối nội dung nhanh và ổn định, hạn chế phụ thuộc vào kết nối khu vực.
-- Hạ tầng: Tận dụng cơ chế tự động khởi động lại hàm Lambda và lưu cache trên trình duyệt để giảm gián đoạn dịch vụ.
-- Bảo mật: Áp dụng xác thực đa lớp qua Amazon Cognito và phân quyền truy cập chặt chẽ cho tài nguyên S3.
-- Chi phí: Thiết lập cảnh báo ngân sách qua AWS Budgets, tối ưu hóa Lambda và S3 theo truy cập thực tế.
+**Kế hoạch dự phòng**
+- Snapshot dữ liệu RDS định kỳ và kiểm thử restore.
+- Duy trì version image ổn định trên ECR để rollback nhanh.
+- Gửi cảnh báo tức thời qua SNS/email khi hệ thống vượt ngưỡng.
 
-*Kế hoạch dự phòng*  
-- Tích hợp AWS SNS & CloudWatch Alerts để gửi thông báo ngay khi hệ thống gặp sự cố (ví dụ: lỗi Lambda, quá tải API Gateway, vượt ngân sách).
-- Sử dụng CloudFormation để khôi phục nhanh toàn bộ cấu hình dịch vụ khi gặp sự cố nghiêm trọng.
-- Lưu trữ bản sao dữ liệu hình ảnh và nhật ký trên S3 phiên bản sao lưu (S3 Versioning) để tránh mất mát.  
+### 8. Kết quả kỳ vọng
+**Cải tiến kỹ thuật**
+- Hệ thống vận hành ổn định, tách lớp rõ ràng frontend/backend/data.
+- Tăng khả năng mở rộng và tính sẵn sàng nhờ kiến trúc AWS container.
+- Cải thiện khả năng quan sát và xử lý sự cố với CloudWatch + SNS + SES.
+- Bổ sung lớp AI hỗ trợ hỏi đáp về đơn hàng, schedule, OEE, Gantt, chậm trễ đơn giản; giúp người dùng truy cập thông tin nhanh hơn và giảm phụ thuộc vào chuyên gia phân tích.
 
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Ứng dụng giúp người dùng tự động lưu trữ, phân tích và hiển thị hành trình du lịch trên bản đồ thay vì ghi chép thủ công.  
-*Giá trị dài hạn*:Tạo ra kho dữ liệu hành trình, hình ảnh và cảm xúc du lịch phong phú — nền tảng cho các ứng dụng gợi ý địa điểm, cá nhân hóa trải nghiệm. 
+**Giá trị dài hạn**
+- Tạo nền tảng kỹ thuật vững chắc cho việc mở rộng tính năng hệ thống quản lý và thống kê sản xuất, bao gồm cả các mô hình AI nâng cao trong tương lai (dự báo tải chuyền, tối ưu lịch, phân tích nguyên nhân chậm trễ).
+- Chuẩn hóa quy trình deploy và vận hành cho các phiên bản tiếp theo.
+- Tối ưu hiệu quả chi phí theo mức tăng trưởng người dùng.
